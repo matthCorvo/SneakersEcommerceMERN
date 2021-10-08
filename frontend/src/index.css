@@ -314,6 +314,7 @@ input#field:focus +  span.back{
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
 .box .brand {
   border: 1px solid #ccc;
   width: 30%;
@@ -325,8 +326,7 @@ input#field:focus +  span.back{
 .box .row span{
   color: crimson;
   font-weight: bolder;
-  font-size: 1.8rem;
-  margin-top:2.6rem;
+  font-size: 5rem;
 }
 .box p{
   line-height: 1.5;
@@ -353,7 +353,9 @@ input#field:focus +  span.back{
 
 .success{color:green;}
 .error{  color: crimson;}
-
+.dflex{display:flex;}
+select{margin: 2rem 4rem;
+padding: .5rem;}
 /* MessageBox */
 .danger {
   color: #a02020;

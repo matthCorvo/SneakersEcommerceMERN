@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
+import Cart from './page/Cart';
 import Home from './page/Home';
 import ProductDetail from './page/ProductDetail';
 
@@ -26,14 +27,12 @@ function App() {
                 <a href="/Cart">Cart</a>
             </div>
         </header>
-        <section className="product" >
-            <h1 className="heading">Dernières <span>nouveautés</span></h1>
+        
             
+            <Route path="/cart/:id?" component={Cart}></Route>
             <Route path="/product/:id" component={ProductDetail}  ></Route>
             <Route path="/" component={Home} exact ></Route>
             
-            </section>  
-
         <footer className="cridet" >
             <div className="box">
                 <h3>all reserved by codeskill</h3>

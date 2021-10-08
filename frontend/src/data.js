@@ -11,6 +11,7 @@ const data = {
         rating: 3.5,
         numReviews: 10,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nobis modi aut architecto similique!',
+        size:35,
       },
       {
         _id: '2',
@@ -23,6 +24,7 @@ const data = {
         rating: 4.0,
         numReviews: 10,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nobis modi aut architecto similique!',
+        size:45,
       },
       {
         _id: '3',
@@ -35,6 +37,7 @@ const data = {
         rating: 2.8,
         numReviews: 17,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nobis modi aut architecto similique!',
+        size:39,
       },
       {
         _id: '4',
@@ -47,6 +50,7 @@ const data = {
         rating: 1.5,
         numReviews: 14,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nobis modi aut architecto similique!',
+        size:37,
       },
       {
         _id: '5',
@@ -59,6 +63,7 @@ const data = {
         rating: 4.5,
         numReviews: 10,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nobis modi aut architecto similique!',
+        size:40,
       },
       {
         _id: '6',
@@ -71,6 +76,7 @@ const data = {
         rating: 3.5,
         numReviews: 15,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nobis modi aut architecto similique!',
+        size:35,
       },
     ],
   };

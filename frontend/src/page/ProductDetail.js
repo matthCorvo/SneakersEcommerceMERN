@@ -1,4 +1,4 @@
-import React, { useEffect }from 'react'
+import React, { useEffect, useState  }from 'react'
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,13 +8,16 @@ import { detailsProduct } from '../redux/actions/productActions';
 
 export default function ProductDetail(props) {
   const dispatch = useDispatch();
+  const [qty, setQty] = useState(1);
   const productId = props.match.params.id;
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
   useEffect(() => {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
-
+  const addToCartHandler = () => {
+    props.history.push(`/cart/${productId}?qty=${qty}`);
+  };
     return (
         <>
 
@@ -48,11 +51,35 @@ export default function ProductDetail(props) {
                         <span className="error">Indisponible</span>
                         )}
                     </div>
+                 <p><strong>Taille : </strong>{product.size}</p>
                 <p>{product.description}</p>
                 
+                {product.countInStock > 0 && (       
+                  <>
 
-                <button className="cart"><h2>Ajouter au panier</h2></button>
+                <div className="dflex">
+                  <h4>Quantité</h4>
+                  <div>
+                   <select
+                              value={qty}
+                              onChange={(e) => setQty(e.target.value)}
+                            >
+                              {[...Array(product.countInStock).keys()].map(
+                                (x) => (
+                                  <option key={x + 1} value={x + 1}>
+                                    {x + 1}
+                                  </option>
+                                )
+                              )}
+                    </select>
+                  </div>
+                </div>
+                <button className="cart"  onClick={addToCartHandler}>
+                  <h2>Ajouter au panier</h2>
+                  </button>
 
+                </>
+                )}
               </div>
             </div>
         </div>

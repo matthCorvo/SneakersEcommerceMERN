@@ -14,6 +14,8 @@ useEffect(() => {
 }, [dispatch]);
     return (
         <div>
+          <section className="product" >
+            <h1 className="heading">Dernières <span>nouveautés</span></h1>
         {loading ? ( <LoadingBox></LoadingBox>
           ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
@@ -24,6 +26,7 @@ useEffect(() => {
               ))}
             </div>
               )}
+              </section>  
             </div>
     )
 }
