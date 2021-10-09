@@ -1,20 +1,23 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 import Cart from './page/Cart';
 import Home from './page/Home';
 import ProductDetail from './page/ProductDetail';
+import { useSelector } from 'react-redux';
 
 function App() {
+    const cart = useSelector((state) => state.cart);
+    const { cartItems } = cart;
   return (
     <BrowserRouter>
     <header>
             <div id="menu-bar" className="fa fa-bars"></div>
-            <a href="/" className="logo">Logo</a>
+            <Link to="/" className="logo">Logo</Link>
             <nav className="navbar">
-                <a href="/">Accueil</a>
-                <a href="/">Homme</a>
-                <a href="/">Femme</a>
-                <a href="/">Enfant</a>
+                <Link to="/">Accueil</Link>
+                <Link to="/">Homme</Link>
+                <Link to="/">Femme</Link>
+                <Link to="/">Enfant</Link>
                  <span className="fas fa-search expSearchFrom">
                         <input id="field" type="text" placeholder="Search here"/>    
                     </span>   
@@ -23,8 +26,13 @@ function App() {
             </nav>
             <div className="icons"> 
                
-                <a href="/Signin">SignIn</a>
-                <a href="/Cart">Cart</a>
+                <Link to="/Signin">SignIn</Link>
+                <Link to="/Cart"> 
+                    <>
+                <i className="fas fa-shopping-bag fa-2x"></i>
+                <span className="badge badge-warning" id='lblCartCount'>{cartItems.length}</span>
+             </>
+             </Link>
             </div>
         </header>
         

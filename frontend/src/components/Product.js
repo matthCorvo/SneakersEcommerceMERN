@@ -1,17 +1,22 @@
 import React from 'react'
 import Rating from './Rating';
+import { Link } from 'react-router-dom';
 
 export default function Product(props) {
     const { product } = props;
+    
     return (
         <div  key={product._id} className="box">
         <div className="icons">
-            <a href="/" className="fa fa-shopping-cart"></a>
-            <a href={`/product/${product._id}`} className="fa fa-eye"></a>
+            <Link to="/" className="fa fa-shopping-cart"></Link>
+            
         </div>
+
         <div className="content">
+            <Link to={`/product/${product._id}`} >
             <img src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
+            </Link>
             <p>{product.category}</p>
             <div className="price">{product.price} € </div>
             <Rating 

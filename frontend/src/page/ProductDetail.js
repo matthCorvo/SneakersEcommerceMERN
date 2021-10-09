@@ -27,8 +27,9 @@ export default function ProductDetail(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-      <Link to="/">Retour au résultat</Link> / <Link to="/">{product.category}</Link>
-        <div class="productdetail">
+        <div className="productdetail">
+          <br></br>
+      <Link to="/"><i class="fas fa-arrow-left"></i> Accueil </Link> / <Link to="/">{product.category}</Link>
         <div className="details" >
               <div className="big-img">
                 <img src={product.image} alt={product.name}/>
